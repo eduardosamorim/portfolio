@@ -6,7 +6,7 @@ import 'package:portfolio/resource/appClass.dart';
 import 'package:portfolio/resource/colors.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 
-class ActionBar extends ConsumerStatefulWidget implements  PreferredSizeWidget {
+class ActionBar extends ConsumerStatefulWidget implements PreferredSizeWidget {
   final AutoScrollController controller;
 
   ActionBar(this.controller, {Key? key}) : super(key: key);
@@ -45,7 +45,7 @@ class _ActionBarState extends ConsumerState<ActionBar> {
                           color: AppColors().cardColor,
                           itemBuilder: (c) => <PopupMenuEntry>[
                             PopupMenuItem(
-                              onTap: () =>  mOnTab(1),
+                              onTap: () => mOnTab(1),
                               child: Container(
                                   width: 90.0,
                                   child: Row(
@@ -64,7 +64,7 @@ class _ActionBarState extends ConsumerState<ActionBar> {
                                   )),
                             ),
                             PopupMenuItem(
-                              onTap: () =>  mOnTab(2),
+                              onTap: () => mOnTab(2),
                               child: Row(
                                 children: [
                                   Icon(Icons.travel_explore_rounded, size: 18),
@@ -78,38 +78,38 @@ class _ActionBarState extends ConsumerState<ActionBar> {
                                 ],
                               ),
                             ),
+                            // PopupMenuItem(
+                            //   onTap: () => mOnTab(3),
+                            //   child: Row(
+                            //     children: [
+                            //       Icon(Icons.computer_rounded, size: 18),
+                            //       Padding(
+                            //         padding: const EdgeInsets.only(left: 10.0),
+                            //         child: Text(
+                            //           'Work',
+                            //           style: GoogleFonts.roboto(),
+                            //         ),
+                            //       ),
+                            //     ],
+                            //   ),
+                            // ),
+                            // PopupMenuItem(
+                            //   onTap: () => mOnTab(4),
+                            //   child: Row(
+                            //     children: [
+                            //       Icon(Icons.games, size: 18),
+                            //       Padding(
+                            //         padding: const EdgeInsets.only(left: 10.0),
+                            //         child: Text(
+                            //           'Games',
+                            //           style: GoogleFonts.roboto(),
+                            //         ),
+                            //       ),
+                            //     ],
+                            //   ),
+                            // ),
                             PopupMenuItem(
-                              onTap: () =>  mOnTab(3),
-                              child: Row(
-                                children: [
-                                  Icon(Icons.computer_rounded, size: 18),
-                                  Padding(
-                                    padding: const EdgeInsets.only(left: 10.0),
-                                    child: Text(
-                                      'Work',
-                                      style: GoogleFonts.roboto(),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            PopupMenuItem(
-                              onTap: () =>  mOnTab(4),
-                              child: Row(
-                                children: [
-                                  Icon(Icons.games, size: 18),
-                                  Padding(
-                                    padding: const EdgeInsets.only(left: 10.0),
-                                    child: Text(
-                                      'Games',
-                                      style: GoogleFonts.roboto(),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            PopupMenuItem(
-                              onTap: () => mOnTab(5),
+                              onTap: () => mOnTab(3),
                               child: Row(
                                 children: [
                                   Icon(Icons.phone_rounded, size: 18),
@@ -135,10 +135,13 @@ class _ActionBarState extends ConsumerState<ActionBar> {
           }
           return Row(
             children: [
-              Expanded(child: Container(
-                  width: AppClass().getMqWidth(context) * 0.07,
-                  height: AppClass().getMqHeight(context) * 0.07,
-                  child: Image.asset('assets/svg/appLogo.png',))),
+              Expanded(
+                  child: Container(
+                      width: AppClass().getMqWidth(context) * 0.07,
+                      height: AppClass().getMqHeight(context) * 0.07,
+                      child: Image.asset(
+                        'assets/svg/appLogo.png',
+                      ))),
               Expanded(
                 flex: 9,
                 child: Row(
@@ -217,79 +220,78 @@ class _ActionBarState extends ConsumerState<ActionBar> {
                         ),
                       ),
                     ),
-                    InkWell(
-                      onTap: () {
-                        widget.controller.scrollToIndex(3,
-                            preferPosition: AutoScrollPosition.begin);
-                      },
-                      onHover: (bol) {
-                        if (bol) {
-                          ref.read(hoverProvider.notifier).state = "workTitle";
-                        } else {
-                          ref.read(hoverProvider.notifier).state = "";
-                        }
-                      },
-                      child: Padding(
-                        padding: const EdgeInsets.only(right: 30.0),
-                        child: Row(
-                          children: [
-                            Text("03. ",
-                                style: TextStyle(
-                                    color: AppColors().neonColor,
-                                    fontSize: 13,
-                                    fontFamily: 'sfmono')),
-                            Consumer(builder: (context, ref, child) {
-                              String state = ref.watch(hoverProvider);
-                              bool isHovered = (state == "workTitle");
-
-                              return Text("Work",
-                                  style: TextStyle(
-                                      color: isHovered
-                                          ? AppColors().neonColor
-                                          : AppColors().textColor,
-                                      fontSize: 13,
-                                      fontFamily: 'sfmono'));
-                            }),
-                          ],
-                        ),
-                      ),
-                    ),
-                    InkWell(
-                      onTap: () {
-                        widget.controller.scrollToIndex(4,
-                            preferPosition: AutoScrollPosition.begin);
-                      },
-                      onHover: (bol) {
-                        if (bol) {
-                          ref.read(hoverProvider.notifier).state =
-                              "gameTitle";
-                        } else {
-                          ref.read(hoverProvider.notifier).state = "";
-                        }
-                      },
-                      child: Padding(
-                        padding: const EdgeInsets.only(right: 30.0),
-                        child: Row(
-                          children: [
-                            Text("04.",
-                                style: TextStyle(
-                                    color: AppColors().neonColor,
-                                    fontSize: 13,
-                                    fontFamily: 'sfmono')),
-                            Consumer(builder: (context, ref, child) {
-                              String state = ref.watch(hoverProvider);
-                              bool isHovered = (state == "gameTitle");
-                              return Text("Games",
-                                  style: TextStyle(
-                                      color: isHovered
-                                          ? AppColors().neonColor
-                                          : AppColors().textColor,
-                                      fontSize: 13));
-                            }),
-                          ],
-                        ),
-                      ),
-                    ),
+                    // InkWell(
+                    //   onTap: () {
+                    //     widget.controller.scrollToIndex(3,
+                    //         preferPosition: AutoScrollPosition.begin);
+                    //   },
+                    //   onHover: (bol) {
+                    //     if (bol) {
+                    //       ref.read(hoverProvider.notifier).state = "workTitle";
+                    //     } else {
+                    //       ref.read(hoverProvider.notifier).state = "";
+                    //     }
+                    //   },
+                    //   child: Padding(
+                    //     padding: const EdgeInsets.only(right: 30.0),
+                    //     child: Row(
+                    //       children: [
+                    //         Text("03. ",
+                    //             style: TextStyle(
+                    //                 color: AppColors().neonColor,
+                    //                 fontSize: 13,
+                    //                 fontFamily: 'sfmono')),
+                    //         Consumer(builder: (context, ref, child) {
+                    //           String state = ref.watch(hoverProvider);
+                    //           bool isHovered = (state == "workTitle");
+                    //
+                    //           return Text("Work",
+                    //               style: TextStyle(
+                    //                   color: isHovered
+                    //                       ? AppColors().neonColor
+                    //                       : AppColors().textColor,
+                    //                   fontSize: 13,
+                    //                   fontFamily: 'sfmono'));
+                    //         }),
+                    //       ],
+                    //     ),
+                    //   ),
+                    // ),
+                    // InkWell(
+                    //   onTap: () {
+                    //     widget.controller.scrollToIndex(4,
+                    //         preferPosition: AutoScrollPosition.begin);
+                    //   },
+                    //   onHover: (bol) {
+                    //     if (bol) {
+                    //       ref.read(hoverProvider.notifier).state = "gameTitle";
+                    //     } else {
+                    //       ref.read(hoverProvider.notifier).state = "";
+                    //     }
+                    //   },
+                    //   child: Padding(
+                    //     padding: const EdgeInsets.only(right: 30.0),
+                    //     child: Row(
+                    //       children: [
+                    //         Text("04.",
+                    //             style: TextStyle(
+                    //                 color: AppColors().neonColor,
+                    //                 fontSize: 13,
+                    //                 fontFamily: 'sfmono')),
+                    //         Consumer(builder: (context, ref, child) {
+                    //           String state = ref.watch(hoverProvider);
+                    //           bool isHovered = (state == "gameTitle");
+                    //           return Text("Games",
+                    //               style: TextStyle(
+                    //                   color: isHovered
+                    //                       ? AppColors().neonColor
+                    //                       : AppColors().textColor,
+                    //                   fontSize: 13));
+                    //         }),
+                    //       ],
+                    //     ),
+                    //   ),
+                    // ),
                     InkWell(
                       onTap: () {
                         widget.controller.scrollToIndex(5,
@@ -298,7 +300,7 @@ class _ActionBarState extends ConsumerState<ActionBar> {
                       onHover: (bol) {
                         if (bol) {
                           ref.read(hoverProvider.notifier).state =
-                          "contactTitle";
+                              "contactTitle";
                         } else {
                           ref.read(hoverProvider.notifier).state = "";
                         }
@@ -307,7 +309,7 @@ class _ActionBarState extends ConsumerState<ActionBar> {
                         padding: const EdgeInsets.only(right: 30.0),
                         child: Row(
                           children: [
-                            Text("05.",
+                            Text("03.",
                                 style: TextStyle(
                                     color: AppColors().neonColor,
                                     fontSize: 13,
@@ -359,6 +361,7 @@ class _ActionBarState extends ConsumerState<ActionBar> {
   }
 
   mOnTab(int i) {
-    widget.controller.scrollToIndex(i, preferPosition: AutoScrollPosition.begin);
+    widget.controller
+        .scrollToIndex(i, preferPosition: AutoScrollPosition.begin);
   }
 }
