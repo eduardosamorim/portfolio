@@ -365,64 +365,6 @@ class _ExperienceTabState extends State<ExperienceTab> {
                             ),
                           ),
                         ),
-                        InkWell(
-                          onTap: () {
-                            ref.read(selectedExpProvider.notifier).state = 1;
-                          },
-                          child: Container(
-                            padding: EdgeInsets.all(10.0),
-                            decoration: BoxDecoration(
-                                color: data == 1
-                                    ? AppColors().cardColor
-                                    : Colors.transparent,
-                                border: Border(
-                                    left: BorderSide(
-                                        color: data == 1
-                                            ? AppColors().neonColor
-                                            : Colors.white,
-                                        width: 2))),
-                            child: Text(
-                              'Rax-Tech',
-                              style: TextStyle(
-                                  color: data == 1
-                                      ? AppColors().neonColor
-                                      : AppColors().textLight,
-                                  letterSpacing: 1,
-                                  height: 1.5,
-                                  fontSize: 13,
-                                  fontFamily: 'sfmono'),
-                            ),
-                          ),
-                        ),
-                        InkWell(
-                          onTap: () {
-                            ref.read(selectedExpProvider.notifier).state = 2;
-                          },
-                          child: Container(
-                            padding: EdgeInsets.all(10.0),
-                            decoration: BoxDecoration(
-                                color: data == 2
-                                    ? AppColors().cardColor
-                                    : Colors.transparent,
-                                border: Border(
-                                    left: BorderSide(
-                                        color: data == 2
-                                            ? AppColors().neonColor
-                                            : Colors.white,
-                                        width: 2))),
-                            child: Text(
-                              'Techno Kryon',
-                              style: TextStyle(
-                                  color: data == 2
-                                      ? AppColors().neonColor
-                                      : AppColors().textLight,
-                                  letterSpacing: 1,
-                                  height: 1.5,
-                                  fontSize: 13,
-                                  fontFamily: 'sfmono'),
-                            ),
-                          ),
-                        ),
                       ],
                     ),
                   ),

@@ -9,11 +9,10 @@ class Strings {
 
   /* About screen contents */
   static final aboutPara1 =
-      '''Hello! Myself Eduardo and I enjoy creating things that live on the internet. My interest in mobile/web development started back in 2019 when I decided to clone some applications — turns my passion into profession.''';
-  static final aboutPara2 =
-      '''Fast-forward to today, and I’ve had the privilege of working for a good organization, a product-based, a huge corporation, and a student-led working atmosphere. My main focus these days is building accessible, inclusive products and digital experiences at Actuary for a variety of clients.''';
+      '''Hello!  I enjoy creating things that live on the internet. My interest in mobile/web development started back in 2019 when I decided to clone some applications — turns my passion into profession.''';
+  static final aboutPara2 = ''' ''';
   static final aboutPara3 =
-      '''I also freelance for various clients across the world. If you've any ideas about creating a project or something, feel free to contact me!''';
+      '''I also freelance for various clients . If you've any ideas about creating a project or something, feel free to contact me!''';
 
   static final techIntro =
       '''Here are a few technologies I’ve been working with recently:''';
@@ -55,5 +54,5 @@ class Strings {
 
   /* Contact screen content */
   static final endTxt =
-      '''Although I’m not currently looking for any new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I’ll try my best to get back to you!''';
+      '''I’m currently looking for any new opportunities for freelance, my inbox is always open. Whether you have a question or just want to say hi, I’ll try my best to get back to you!''';
 }

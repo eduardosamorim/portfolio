@@ -328,30 +328,30 @@ class _ActionBarState extends ConsumerState<ActionBar> {
                         ),
                       ),
                     ),
-                    InkWell(
-                      onTap: () {
-                        AppClass().downloadResume(context);
-                      },
-                      child: Container(
-                        height: 40,
-                        width: 80,
-                        decoration: BoxDecoration(
-                            color: Colors.transparent,
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(3.0)),
-                            border: Border.all(
-                                color: AppColors().neonColor, width: 1.5)),
-                        child: Center(
-                          child: Text('Resume',
-                              style: TextStyle(
-                                  color: AppColors().neonColor,
-                                  fontSize: 13,
-                                  letterSpacing: 1,
-                                  fontWeight: FontWeight.bold,
-                                  fontFamily: 'sfmono')),
-                        ),
-                      ),
-                    )
+                    // InkWell(
+                    //   onTap: () {
+                    //     AppClass().downloadResume(context);
+                    //   },
+                    //   child: Container(
+                    //     height: 40,
+                    //     width: 80,
+                    //     decoration: BoxDecoration(
+                    //         color: Colors.transparent,
+                    //         borderRadius:
+                    //             BorderRadius.all(Radius.circular(3.0)),
+                    //         border: Border.all(
+                    //             color: AppColors().neonColor, width: 1.5)),
+                    //     child: Center(
+                    //       child: Text('Resume',
+                    //           style: TextStyle(
+                    //               color: AppColors().neonColor,
+                    //               fontSize: 13,
+                    //               letterSpacing: 1,
+                    //               fontWeight: FontWeight.bold,
+                    //               fontFamily: 'sfmono')),
+                    //     ),
+                    //   ),
+                    // )
                   ],
                 ),
               ),
